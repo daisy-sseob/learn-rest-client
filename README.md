@@ -8,4 +8,7 @@
 
 ## Non-Blocking I/O
 - WebClient
-  - 
+  - WebClientAutoConfiguration을 통해 spring-webfux 의존성이 존재하면 WebClient.Builder를 Beand으로 등록한다.
+
+## WebClient 학습 하기 ! 🧑🏻‍💻
+- https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-client
