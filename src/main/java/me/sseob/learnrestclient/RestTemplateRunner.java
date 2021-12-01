@@ -16,6 +16,9 @@ public class RestTemplateRunner implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		
+		System.out.println("================= Start RestTemplate Runner =================");
+		
 		RestTemplate restTemplate = restTemplateBuilder.build();
 
 		StopWatch stopWatch = new StopWatch();
@@ -34,5 +37,7 @@ public class RestTemplateRunner implements ApplicationRunner {
 		//blocking request이므로 합산하여 8초정도 출력된다.
 		System.out.println(stopWatch.prettyPrint());
 		System.out.println("total running seconds: " + stopWatch.getTotalTimeSeconds());
+
+		System.out.println("================= End RestTemplate Runner =================\n");
 	}
 }
