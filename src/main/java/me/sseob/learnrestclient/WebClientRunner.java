@@ -57,6 +57,7 @@ public class WebClientRunner implements ApplicationRunner {
 			stopWatch.start();
 		});
 		
+		// Non-Blocking I/O 이기 때문에 위에 비동기적인 소스코드들을 지나쳐, StopWatch로 측정하려는 시간 print보다 아래 print가 먼저 찍힌다.
 		System.out.println("================= End WebClient Runner =================");
 	}
 }
