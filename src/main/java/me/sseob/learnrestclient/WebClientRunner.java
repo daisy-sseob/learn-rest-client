@@ -19,7 +19,10 @@ public class WebClientRunner implements ApplicationRunner {
 
 		System.out.println("================= Start WebClient Runner =================");
 
-		WebClient build = builder.build();
+		// 간단하게 지역적인 custom
+		WebClient build = builder
+				.baseUrl("http://localhost:8080")
+				.build();
 
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
@@ -27,7 +30,7 @@ public class WebClientRunner implements ApplicationRunner {
 		// Mono 객체 생성
 		Mono<String> helloMono = build
 				.get()
-				.uri("http://localhost:8080/hello")
+				.uri("/hello")
 				.retrieve()
 				.bodyToMono(String.class); //body를 mono type으로 변경하자
 
@@ -43,7 +46,7 @@ public class WebClientRunner implements ApplicationRunner {
 
 		Mono<String> sseobMono = build
 				.get()
-				.uri("http://localhost:8080/sseob")
+				.uri("/sseob")
 				.retrieve()
 				.bodyToMono(String.class);
 
