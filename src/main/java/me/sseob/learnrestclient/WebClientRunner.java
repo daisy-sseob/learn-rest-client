@@ -17,12 +17,14 @@ public class WebClientRunner implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
+		WebClient build = builder.build();
+
 		System.out.println("================= Start WebClient Runner =================");
 
 		// 간단하게 지역적인 custom
-		WebClient build = builder
-				.baseUrl("http://localhost:8080")
-				.build();
+//		WebClient build = builder
+//				.baseUrl("http://localhost:8080")
+//				.build();
 
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
